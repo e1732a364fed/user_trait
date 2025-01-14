@@ -229,6 +229,15 @@ impl<T: UserTrait + Clone> UsersMap<T> {
         }
     }
 
+    pub fn len(&self) -> usize {
+        debug_assert_eq!(self.id_map.len(), self.auth_map.len());
+        self.id_map.len()
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.id_map.is_empty()
+    }
+
     /// Retrieves a user by their identity string
     pub fn get_user(&self, id: &str) -> Option<Arc<T>> {
         self.id_map.get(id).map(Arc::clone)
