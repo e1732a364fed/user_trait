@@ -30,7 +30,7 @@ fn main() {
     users_map.add_user(user1);
     users_map.add_user(user2);
 
-    if let Some(authenticated_user) = users_map.auth_user_by_authst("plaintext:user2\npassword2") {
+    if let Some(authenticated_user) = users_map.auth_user_by_authstr("plaintext:user2\npassword2") {
 
         println!("User authenticated: {}", authenticated_user.identity_str());
     } else {
