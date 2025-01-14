@@ -8,7 +8,7 @@ readme = "README.md"
 homepage = "https://github.com/e1732a364fed/user_trait"
 repository = "https://github.com/e1732a364fed/user_trait"
 keywords = ["user", "authentication", "trait", "auth"]
-categories = ["Authentication", "Data Structures"]
+categories = ["authentication", "data-structures"]
 
 [dependencies]
 
