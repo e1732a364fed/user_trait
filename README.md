@@ -17,7 +17,7 @@ To use this library, add it as a dependency in your `Cargo.toml`:
 
 ```toml
 [dependencies]
-user_trait = "0.1.0"
+user_trait = "0.1"
 ```
 
 ```rust
