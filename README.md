@@ -21,7 +21,7 @@ user_trait = "0.1.0"
 ```
 
 ```rust
-use user_trait::{PlainText, UsersMap, AsyncUserAuthenticator};
+use user_trait::{PlainText, UsersMap, UserAuthenticator};
 
 fn main() {
     let user1 = PlainText::new("user1".to_string(), "password1".to_string());
