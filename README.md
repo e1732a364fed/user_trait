@@ -6,7 +6,7 @@ This library provides basic traits and helper structures for user authentication
 
 - **UserTrait**: A trait defining methods for user identification and authentication.
 - **UserBox**: A wrapper for a boxed user implementing the `User` trait, with support for hashing and ordering.
-- **UserVec**: A vector of `UserBox` with additional functionality for sorting and hashing.
+- **UserVec**: A vector of `UserBox` with additional functionality for hashing, different orders will have different hash values, which can be used to identify a specific user chain.
 - **UserAuthenticator**: A trait for user authentication.
 - **PlainText**: A simple implementation of a user with plaintext username and password.
 - **UsersMap**: A map for storing users, implementing `UserAuthenticator`.

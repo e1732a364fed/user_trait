@@ -85,8 +85,8 @@ impl Eq for UserBox {}
 
 /// A Vec of `UserBox` with additional functionality.
 ///
-/// This struct provides a method to  hash the set, NOT ensuring consistent hash values
-/// regardless of the order of elements.
+/// This struct provides a method to  hash the set, ensuring that
+/// the hash value is different for different orders within the vec.
 ///
 /// This is intended. As different orders are considered to be important in the UserVec's case.
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
@@ -197,10 +197,6 @@ impl UserTrait for PlainText {
 }
 
 /// A map structure that stores users with both identity and authentication mappings.
-///
-/// Contains two internal hashmaps:
-/// - id_map: Maps user identities to user instances
-/// - auth_map: Maps authentication strings to user instances
 #[derive(Debug, Clone, Default)]
 pub struct UsersMap<T: UserTrait + Clone> {
     /// Maps user identity strings to user instances
@@ -290,16 +286,12 @@ mod test {
 
         let o = um.auth_user_by_authstr("plaintext:u");
 
-        if o.is_some() {
-            panic!("o.is_some() ");
-        }
+        assert!(o.is_none());
 
         let o = um.auth_user_by_authstr("plaintext:u2\np2");
 
-        if o.is_none() {
-            panic!("o.is_none()")
-        } else {
-            Ok(())
-        }
+        assert!(o.is_some());
+
+        Ok(())
     }
 }
